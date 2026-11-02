@@ -26,9 +26,11 @@
     <Deterministic>false</Deterministic>
     <AssemblyVersion>3.2.*</AssemblyVersion>
     <OutputPath>bin\$(Configuration)\</OutputPath>
+    <!-- If SolutionDir is empty, default it to the parent directory of this project -->
+    <SolutionDir Condition="'$(SolutionDir)' == '' or '$(SolutionDir)' == '*Undefined*'">$(MSBuildProjectDirectory)\..\</SolutionDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
+    <DebugType>portable</DebugType>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
